@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>YouTube Downloader</title>
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -10,15 +9,16 @@
       crossorigin="anonymous"
     />
   </head>
-  <body >
-    
-
-    <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <body>
+    <div
+      class="row d-flex justify-content-center align-items-center"
+      style="height: 100vh;"
+    >
       <div class="col-8">
         <h1 class="heading">My Own YouTube Downloader !</h1>
         <div class="form-inline d-flex bd-highlight">
           <div class="p-2 bd-highlight">
-            <label for="staticEmail2" >Link youtube</label>
+            <label for="staticEmail2">Link youtube</label>
           </div>
           <div class="p-2 bd-highlight" style="flex-grow: 1;">
             <input
@@ -37,17 +37,12 @@
     <script>
       var convertBtn = document.querySelector(".convert-button");
       var URLinput = document.querySelector(".URL-input");
+      const url = window.location.href;
       convertBtn.addEventListener("click", () => {
-        console.log(`URL: ${URLinput.value}`);
         sendURL(URLinput.value);
       });
       function sendURL(URL) {
-        // fetch(`http://localhost:8000/download?URL=${URL}`, {
-        //   method: "GET",
-        // })
-        //   .then((res) => res.json())
-        //   .then((json) => console.log(json));
-        window.location.href = `http://localhost:8000/download?URL=${URL}`;
+        window.location.href = `${url}download?URL=${URL}`;
       }
     </script>
   </body>

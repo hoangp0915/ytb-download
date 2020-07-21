@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "start": "node app.js"
+  "start": "node app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app",
+	 "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -14,8 +15,10 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "request": "2.88.2",
-    "youtube-dl": "3.0.2",
-    "youtube-mp3-downloader": "^0.7.0",
     "ytdl-core": "^3.1.2"
+  },
+  "engines": {
+    "node": "12.16.0",
+    "npm": "6.13.4"
   }
 }

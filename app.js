@@ -6,7 +6,7 @@ const cors = require("cors");
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const path = require("path");
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,7 +21,7 @@ app.get("/download", function (req, res) {
     "Content-Disposition",
     'attachment; filename="music-download.mp3"'
   );
-  const ytdl = ytdl(URL, {
+  ytdl(URL, {
     format: "mp4",
   }).pipe(res);
 });
