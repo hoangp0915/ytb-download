@@ -6,6 +6,7 @@ const cors = require("cors");
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const path = require("path");
+const port = process.env.PORT || 3000
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,6 +26,6 @@ app.get("/download", function (req, res) {
   }).pipe(res);
 });
 
-app.listen(8000, () => {
-  console.log("App running http://localhost:8000");
+app.listen(port, () => {
+  console.log("App running in port: " + port);
 });
