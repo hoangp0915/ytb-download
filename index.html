@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouTube Downloader</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body >
+    
+
+    <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
+      <div class="col-8">
+        <h1 class="heading">My Own YouTube Downloader !</h1>
+        <div class="form-inline d-flex bd-highlight">
+          <div class="p-2 bd-highlight">
+            <label for="staticEmail2" >Link youtube</label>
+          </div>
+          <div class="p-2 bd-highlight" style="flex-grow: 1;">
+            <input
+              type="text"
+              class="form-control URL-input w-100"
+              id="staticEmail2"
+              placeholder="Video URL e.g. https://www.youtube.com/watch?v=MtN1YnoL46Q"
+            />
+          </div>
+          <div class="p-2 bd-highlight">
+            <button class="convert-button btn btn-primary ml-2">Convert</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var convertBtn = document.querySelector(".convert-button");
+      var URLinput = document.querySelector(".URL-input");
+      convertBtn.addEventListener("click", () => {
+        console.log(`URL: ${URLinput.value}`);
+        sendURL(URLinput.value);
+      });
+      function sendURL(URL) {
+        // fetch(`http://localhost:8000/download?URL=${URL}`, {
+        //   method: "GET",
+        // })
+        //   .then((res) => res.json())
+        //   .then((json) => console.log(json));
+        window.location.href = `http://localhost:8000/download?URL=${URL}`;
+      }
+    </script>
+  </body>
+</html>
